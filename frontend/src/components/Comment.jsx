@@ -4,7 +4,7 @@ import { UserContext } from "../context/UserContext"
 import axios from "axios"
 import { URL } from "../url"
 
-const Comment = ({ c }) => {
+const Comment = ({ c, post }) => {
 	const { user } = useContext(UserContext)
 	const deleteComment = async (id) => {
 		try {

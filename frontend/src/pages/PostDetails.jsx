@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { BiEdit } from "react-icons/bi"
 import { MdDelete } from "react-icons/md"
-import Comment from "../components/comment"
+import Comment from "../components/Comment"
 import axios from "axios"
 import { URL, IF } from "../url"
 import { UserContext } from "../context/UserContext"
@@ -140,11 +140,14 @@ const PostDetails = () => {
 					<div className="flex flex-col mt-4">
 						<h3 className="mt-6 mb-4 font-semibold">Comments:</h3>
 						{/* comment */}
+
 						{comments?.map((c) => (
-							<Comment
-								key={c._id}
-								c={c}
-							/>
+							<div key={c._id}>
+								<Comment
+									post={post}
+									c={c}
+								/>
+							</div>
 						))}
 					</div>
 					{/* write a comment */}
